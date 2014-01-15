@@ -37,7 +37,7 @@ exports.create=function(){
 	functions.map = function(methods,action_name,action,permit){
 		var mts=methods.toUpperCase().split(" ");
 		mts.forEach(function(m){
-			_methods[m][action_name]={action:action, permit:permit};
+			_methods[m][action_name.toUpperCase()]={action:action, permit:permit};
 		});
 	}
 

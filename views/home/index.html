@@ -1,7 +1,27 @@
 @!(ctx)
 
 @function body() {
-  <h1>Woohooo!</h1>
+<section  ng-controller="MainCtrl">
+	<div class="jumbotron">
+        <h1>Remote MP3 Player</h1>
+        <p class="lead">Para esos días en que el Campa, Edwin o Pacheco se descuidan y dejan su computadora prendida con las bocinas a todo volumen, y se te antoja escuchar alguna de tus canciones a todo lo que da!</p>
+        <form enctype="multipart/form-data" method="POST" action="api/media/play">
+        	<input type="file" name="file">
+        	<button type="submit" class="btn btn-success">Upload MP3</a>
+        </form>
+    </div>
+  <h1>MP3 List!</h1>
+  <ul>
+  	<li ng-repeat="file in files">
+  		{{file.name}}
+  		<button type="button" class="btn btn-info"><span class="glyphicon glyphicon-play"></span></button>
+  	</li>
+  </ul>
+</section>
 }
 
-@render("../layouts/main.html",body);
+@function scripts() {
+	<script src="js/app.js"></script>
+}
+
+@render("../layouts/main.html",body,scripts);
