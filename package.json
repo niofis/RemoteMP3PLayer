@@ -9,6 +9,7 @@
     "express": "3.4.*",
     "underscore": "~1.5.*",
     "bliss": "~1.0.*",
-    "mpg123": "0.0.3"
+    "nosql": "~2.0.7",
+    "multiparty": "~3.2.0"
   }
 }
