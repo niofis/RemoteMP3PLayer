@@ -9,6 +9,7 @@ var path = require('path');
 var routes = require('./routes');
 var Bliss = require('bliss');
 var bliss = new Bliss();
+var daemon = require('./daemon');
 
 var app = express();
 
@@ -34,6 +35,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+daemon.register(server);
