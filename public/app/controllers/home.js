@@ -4,7 +4,7 @@ angular.module('XPSeed.controllers', ['ngResource']).
 controller('HomeCtrl',['$scope','$resource',function($scope,$resource) {
 	$scope.media = [];
 
-	var socket = io.connect('http://localhost');
+	var socket = io.connect();
 	socket.on('connect', function (data) {
 	  socket.emit('getList',null);
 	});
