@@ -21,11 +21,11 @@ exp.register = function (server){
 	  		function (doc) { return doc;},
 	  		function (docs) {
 	  			socket.emit('list',docs);
-	  		})
+	  		});
 	  });
 
 	  socket.on('getInfo', function () {
-	  	
+
 	  })
 	});
 }
