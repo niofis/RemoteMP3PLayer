@@ -22,7 +22,9 @@ ctrl.map('POST','upload',function (req,res,next){
 				filename: part.filename
 			});
 		part.pipe(writeStream);
+		part.on('end', function (){
+			res.redirect('/');
+		});
 	});
 	form.parse(req);
-	res.redirect('/');
 },'public');
